@@ -7,6 +7,10 @@
                                                                                                                                                                                                                    
 (load-theme 'afternoon t)                                                                                                                                                                                          
 (global-display-line-numbers-mode)                                                                                                                                                                                 
+(desktop-save-mode 1)                                                                                                                                                                                              
+(global-set-key (kbd "C-x w") 'menu-bar-open)                                                                                                                                                                      
+;;(setq x-select-enable-clipboard t)                                                                                                                                                                               
+;;(setq select-enable-clipboard t)                                                                                                                                                                                 
 (custom-set-variables                                                                                                                                                                                              
  ;; custom-set-variables was added by Custom.                                                                                                                                                                      
  ;; If you edit it by hand, you could mess it up, so be careful.                                                                                                                                                   
@@ -30,5 +34,4 @@
 (setq-default neo-show-hidden-files t)                                                                                                                                                                             
                                                                                                                                                                                                                    
 ;;(add-to-list 'eglot-server-programs '(foo-mode . ("foo-language-server" "--args")))                                                                                                                              
-(add-hook 'after-init-hook 'global-company-mode)                                                                                                                                                                   
-                                                          
+(add-hook 'after-init-hook 'global-company-mode)                                                                                                                                                                                           
