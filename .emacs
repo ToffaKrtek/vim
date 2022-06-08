@@ -9,6 +9,7 @@
 (global-display-line-numbers-mode)                                                                                                                                                                                 
 (desktop-save-mode 1)                                                                                                                                                                                              
 (global-set-key (kbd "C-x w") 'menu-bar-open)                                                                                                                                                                      
+(global-set-key (kbd "C-x g") 'goto-line)                                                                                                                                                                          
 ;;(setq x-select-enable-clipboard t)                                                                                                                                                                               
 ;;(setq select-enable-clipboard t)                                                                                                                                                                                 
 (custom-set-variables                                                                                                                                                                                              
@@ -17,10 +18,11 @@
  ;; Your init file should contain only one such instance.                                                                                                                                                          
  ;; If there is more than one, they won't work right.                                                                                                                                                              
  '(custom-safe-themes                                                                                                                                                                                              
-   '("57e3f215bef8784157991c4957965aa31bac935aca011b29d7d8e113a652b693" "3d4df186126c347e002c8366d32016948068d2e9198c496093a96775cc3b3eaa" default))                                                               
+   '("0cd00c17f9c1f408343ac77237efca1e4e335b84406e05221126a6ee7da28971" "57e3f215bef8784157991c4957965aa31bac935aca011b29d7d8e113a652b693" "3d4df186126c347e002c8366d32016948068d2e9198c496093a96775cc3b3eaa" defa\
+ult))                                                                                                                                                                                                              
  '(ispell-dictionary nil)                                                                                                                                                                                          
  '(package-selected-packages                                                                                                                                                                                       
-   '(afternoon-theme abyss-theme company ## eglot cmake-mode php-mode neotree jsonrpc go-mode flymake)))                                                                                                           
+   '(minimap company-tabnine darkokai-theme afternoon-theme abyss-theme company ## eglot cmake-mode php-mode neotree jsonrpc go-mode flymake)))                                                                    
 (custom-set-faces                                                                                                                                                                                                  
  ;; custom-set-faces was added by Custom.                                                                                                                                                                          
  ;; If you edit it by hand, you could mess it up, so be careful.                                                                                                                                                   
@@ -34,4 +36,11 @@
 (setq-default neo-show-hidden-files t)                                                                                                                                                                             
                                                                                                                                                                                                                    
 ;;(add-to-list 'eglot-server-programs '(foo-mode . ("foo-language-server" "--args")))                                                                                                                              
-(add-hook 'after-init-hook 'global-company-mode)                                                                                                                                                                                           
+;;(add-hook 'after-init-hook 'global-company-mode)                                                                                                                                                                 
+(require 'company-tabnine)                                                                                                                                                                                         
+(add-to-list 'company-backends #'company-tabnine)                                                                                                                                                                  
+;; Trigger completion immediately.                                                                                                                                                                                 
+(setq company-idle-delay 0)                                                                                                                                                                                        
+                                                                                                                                                                                                                   
+;; Number the candidates (use M-1, M-2 etc to select completions).                                                                                                                                                 
+(setq company-show-numbers t)                                                                                                                                            
